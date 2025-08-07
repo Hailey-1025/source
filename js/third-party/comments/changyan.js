@@ -10,25 +10,26 @@ document.addEventListener('page:loaded', () => {
     return NexT.utils.getScript(countJs, {
       attributes: {
         async: true,
-        id   : 'cy_cmt_num'
-      }
+        id: 'cy_cmt_num',
+      },
     });
   }, 0);
 
   // When scroll to comment section
   if (CONFIG.page.comments && !CONFIG.page.isHome) {
-    NexT.utils.loadComments('#SOHUCS')
+    NexT.utils
+      .loadComments('#SOHUCS')
       .then(() => {
         return NexT.utils.getScript(mainJs, {
           attributes: {
-            async: true
-          }
+            async: true,
+          },
         });
       })
       .then(() => {
         window.changyan.api.config({
           appid,
-          conf: appkey
+          conf: appkey,
         });
       })
       .catch(error => {

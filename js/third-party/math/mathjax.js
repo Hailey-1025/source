@@ -7,25 +7,30 @@ document.addEventListener('page:loaded', () => {
     window.MathJax = {
       tex: {
         inlineMath: { '[+]': [['$', '$']] },
-        tags      : CONFIG.mathjax.tags
+        tags: CONFIG.mathjax.tags,
       },
       options: {
         renderActions: {
-          insertedScript: [200, () => {
-            document.querySelectorAll('mjx-container').forEach(node => {
-              const target = node.parentNode;
-              if (target.nodeName.toLowerCase() === 'li') {
-                target.parentNode.classList.add('has-jax');
-              }
-            });
-          }, '', false]
-        }
-      }
+          insertedScript: [
+            200,
+            () => {
+              document.querySelectorAll('mjx-container').forEach(node => {
+                const target = node.parentNode;
+                if (target.nodeName.toLowerCase() === 'li') {
+                  target.parentNode.classList.add('has-jax');
+                }
+              });
+            },
+            '',
+            false,
+          ],
+        },
+      },
     };
     NexT.utils.getScript(CONFIG.mathjax.js, {
       attributes: {
-        defer: true
-      }
+        defer: true,
+      },
     });
   } else {
     MathJax.startup.document.state(0);

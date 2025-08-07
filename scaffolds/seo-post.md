@@ -1,8 +1,8 @@
 ---
-title: {{ title }}
-date: {{ date }}
-updated: {{ date }}
-categories: 
+title: { { title } }
+date: { { date } }
+updated: { { date } }
+categories:
   - 前端技術
 tags:
   - JavaScript
@@ -42,4 +42,4 @@ mathjax: false
 
 ---
 
-**標籤**: #前端開發 #JavaScript #Web開發 #程式學習 
+**標籤**: #前端開發 #JavaScript #Web開發 #程式學習

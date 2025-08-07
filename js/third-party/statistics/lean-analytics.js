@@ -1,10 +1,12 @@
 /* global CONFIG */
 /* eslint-disable no-console */
 
-(function() {
+(function () {
   const leancloudSelector = url => {
     url = encodeURI(url);
-    return document.getElementById(url).querySelector('.leancloud-visitors-count');
+    return document
+      .getElementById(url)
+      .querySelector('.leancloud-visitors-count');
   };
 
   const addCount = Counter => {
@@ -12,7 +14,10 @@
     const url = decodeURI(visitors.id);
     const title = visitors.dataset.flagTitle;
 
-    Counter('get', `/classes/Counter?where=${encodeURIComponent(JSON.stringify({ url }))}`)
+    Counter(
+      'get',
+      `/classes/Counter?where=${encodeURIComponent(JSON.stringify({ url }))}`
+    )
       .then(response => response.json())
       .then(({ results }) => {
         if (results.length > 0) {
@@ -20,16 +25,18 @@
           leancloudSelector(url).innerText = counter.time + 1;
           Counter('put', '/classes/Counter/' + counter.objectId, {
             time: {
-              '__op'  : 'Increment',
-              'amount': 1
-            }
-          })
-            .catch(error => {
-              console.error('Failed to save visitor count', error);
-            });
+              __op: 'Increment',
+              amount: 1,
+            },
+          }).catch(error => {
+            console.error('Failed to save visitor count', error);
+          });
         } else if (CONFIG.leancloud_visitors.security) {
-          leancloudSelector(url).innerText = 'Counter not initialized! More info at console err msg.';
-          console.error('ATTENTION! LeanCloud counter has security bug, see how to solve it here: https://github.com/theme-next/hexo-leancloud-counter-security. \n However, you can still use LeanCloud without security, by setting `security` option to `false`.');
+          leancloudSelector(url).innerText =
+            'Counter not initialized! More info at console err msg.';
+          console.error(
+            'ATTENTION! LeanCloud counter has security bug, see how to solve it here: https://github.com/theme-next/hexo-leancloud-counter-security. \n However, you can still use LeanCloud without security, by setting `security` option to `false`.'
+          );
         } else {
           Counter('post', '/classes/Counter', { title, url, time: 1 })
             .then(response => response.json())
@@ -52,7 +59,10 @@
       return decodeURI(element.id);
     });
 
-    Counter('get', `/classes/Counter?where=${encodeURIComponent(JSON.stringify({ url: { '$in': entries } }))}`)
+    Counter(
+      'get',
+      `/classes/Counter?where=${encodeURIComponent(JSON.stringify({ url: { $in: entries } }))}`
+    )
       .then(response => response.json())
       .then(({ results }) => {
         for (const url of entries) {
@@ -71,11 +81,11 @@
       return fetch(`${api_server}/1.1${url}`, {
         method,
         headers: {
-          'X-LC-Id'     : app_id,
-          'X-LC-Key'    : app_key,
-          'Content-Type': 'application/json'
+          'X-LC-Id': app_id,
+          'X-LC-Key': app_key,
+          'Content-Type': 'application/json',
         },
-        body: JSON.stringify(data)
+        body: JSON.stringify(data),
       });
     };
     if (CONFIG.page.isPost) {

@@ -1,0 +1,22 @@
+# Hexo generated files
+public/
+.deploy*/
+db.json
+
+# Dependencies
+node_modules/
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Build files
+*.min.js
+*.min.css
+
+# Package files
+package-lock.json
+yarn.lock 

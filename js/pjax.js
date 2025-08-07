@@ -9,7 +9,7 @@ const pjax = new Pjax({
     '.post-toc-wrap',
     '.main-inner',
     '.languages',
-    '.pjax'
+    '.pjax',
   ],
   switches: {
     '.post-toc-wrap'(oldWrap, newWrap) {
@@ -22,11 +22,11 @@ const pjax = new Pjax({
         }
         this.onSwitch();
       }
-    }
+    },
   },
   analytics: false,
   cacheBust: false,
-  scrollTo : !CONFIG.bookmark.enable
+  scrollTo: !CONFIG.bookmark.enable,
 });
 
 document.addEventListener('pjax:success', () => {
@@ -44,7 +44,9 @@ document.addEventListener('pjax:success', () => {
   }
   if (CONFIG.sidebar.display !== 'remove') {
     const hasTOC = document.querySelector('.post-toc:not(.placeholder-toc)');
-    document.querySelector('.sidebar-inner').classList.toggle('sidebar-nav-active', hasTOC);
+    document
+      .querySelector('.sidebar-inner')
+      .classList.toggle('sidebar-nav-active', hasTOC);
     NexT.utils.activateSidebarPanel(hasTOC ? 0 : 1);
     NexT.utils.updateSidebarPosition();
   }

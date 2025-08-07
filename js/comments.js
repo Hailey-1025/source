@@ -6,7 +6,9 @@ window.addEventListener('tabs:register', () => {
     activeClass = localStorage.getItem('comments_active') || activeClass;
   }
   if (activeClass) {
-    const activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+    const activeTab = document.querySelector(
+      `a[href="#comment-${activeClass}"]`
+    );
     if (activeTab) {
       activeTab.click();
     }

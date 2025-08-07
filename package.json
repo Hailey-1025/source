@@ -6,7 +6,11 @@
     "build": "hexo generate",
     "clean": "hexo clean",
     "deploy": "hexo deploy",
-    "server": "hexo server"
+    "server": "hexo server",
+    "format": "prettier --write \"**/*.{js,json,md,yml,yaml}\"",
+    "format:check": "prettier --check \"**/*.{js,json,md,yml,yaml}\"",
+    "prebuild": "npm run format",
+    "predeploy": "npm run format"
   },
   "hexo": {
     "version": "7.3.0"
@@ -24,5 +28,8 @@
     "hexo-server": "^3.0.0",
     "hexo-theme-landscape": "^1.0.0",
     "hexo-theme-next": "^8.23.2"
+  },
+  "devDependencies": {
+    "prettier": "^3.6.2"
   }
 }

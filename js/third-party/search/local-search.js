@@ -7,9 +7,9 @@ document.addEventListener('DOMContentLoaded', () => {
     return;
   }
   const localSearch = new LocalSearch({
-    path             : CONFIG.path,
+    path: CONFIG.path,
     top_n_per_article: CONFIG.localsearch.top_n_per_article,
-    unescape         : CONFIG.localsearch.unescape
+    unescape: CONFIG.localsearch.unescape,
   });
 
   const input = document.querySelector('.search-input');
@@ -25,9 +25,11 @@ document.addEventListener('DOMContentLoaded', () => {
       resultItems = localSearch.getResultItems(keywords);
     }
     if (keywords.length === 1 && keywords[0] === '') {
-      container.innerHTML = '<div class="search-result-icon"><i class="fa fa-search fa-5x"></i></div>';
+      container.innerHTML =
+        '<div class="search-result-icon"><i class="fa fa-search fa-5x"></i></div>';
     } else if (resultItems.length === 0) {
-      container.innerHTML = '<div class="search-result-icon"><i class="far fa-frown fa-5x"></i></div>';
+      container.innerHTML =
+        '<div class="search-result-icon"><i class="far fa-frown fa-5x"></i></div>';
     } else {
       resultItems.sort((left, right) => {
         if (left.includedCount !== right.includedCount) {
@@ -71,12 +73,16 @@ document.addEventListener('DOMContentLoaded', () => {
     document.body.classList.remove('search-active');
   };
 
-  document.querySelector('.search-pop-overlay').addEventListener('click', event => {
-    if (event.target === document.querySelector('.search-pop-overlay')) {
-      onPopupClose();
-    }
-  });
-  document.querySelector('.popup-btn-close').addEventListener('click', onPopupClose);
+  document
+    .querySelector('.search-pop-overlay')
+    .addEventListener('click', event => {
+      if (event.target === document.querySelector('.search-pop-overlay')) {
+        onPopupClose();
+      }
+    });
+  document
+    .querySelector('.popup-btn-close')
+    .addEventListener('click', onPopupClose);
   document.addEventListener('pjax:success', () => {
     localSearch.highlightSearchWords(document.querySelector('.post-body'));
     onPopupClose();

@@ -1,6 +1,6 @@
 /* global CONFIG, quicklink */
 
-(function() {
+(function () {
   if (typeof CONFIG.quicklink.ignores === 'string') {
     const ignoresStr = `[${CONFIG.quicklink.ignores}]`;
     CONFIG.quicklink.ignores = JSON.parse(ignoresStr);
@@ -18,13 +18,13 @@
     }
 
     resetFn = quicklink.listen({
-      timeout : CONFIG.quicklink.timeout,
+      timeout: CONFIG.quicklink.timeout,
       priority: CONFIG.quicklink.priority,
-      ignores : [
+      ignores: [
         uri => uri.includes('#'),
         uri => uri === CONFIG.quicklink.url,
-        ...ignoresArr
-      ]
+        ...ignoresArr,
+      ],
     });
   };
 

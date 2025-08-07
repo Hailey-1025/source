@@ -1,10 +1,10 @@
 /* global CONFIG, Chatra */
 
-(function() {
+(function () {
   if (CONFIG.chatra.embed) {
     window.ChatraSetup = {
-      mode    : 'frame',
-      injectTo: CONFIG.chatra.embed
+      mode: 'frame',
+      injectTo: CONFIG.chatra.embed,
     };
   }
 

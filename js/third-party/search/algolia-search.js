@@ -8,9 +8,11 @@ document.addEventListener('DOMContentLoaded', () => {
   const container = document.querySelector('.search-result-container');
 
   const formatHits = data => {
-    const { title, excerpt, excerptStrip, contentStripTruncate } = data._highlightResult;
+    const { title, excerpt, excerptStrip, contentStripTruncate } =
+      data._highlightResult;
     let result = `<li><a href="${data.permalink}" class="search-result-title">${title.value}</a>`;
-    const content = excerpt?.value || excerptStrip?.value || contentStripTruncate?.value;
+    const content =
+      excerpt?.value || excerptStrip?.value || contentStripTruncate?.value;
     if (content) {
       const div = document.createElement('div');
       div.innerHTML = content;
@@ -22,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
   let isSearching = false;
   let pendingQuery = null;
 
-  const searchAlgolia = async(searchText, page = 0) => {
+  const searchAlgolia = async (searchText, page = 0) => {
     if (isSearching) {
       pendingQuery = { searchText, page };
       return;
@@ -30,20 +32,28 @@ document.addEventListener('DOMContentLoaded', () => {
     isSearching = true;
     const startTime = Date.now();
     const result = await client.search({
-      requests: [{
-        indexName,
-        page,
-        query                : searchText,
-        hitsPerPage          : hits.per_page || 10,
-        attributesToRetrieve : ['permalink'],
-        attributesToHighlight: ['title', 'excerpt', 'excerptStrip', 'contentStripTruncate'],
-        highlightPreTag      : '<mark class="search-keyword">',
-        highlightPostTag     : '</mark>'
-      }]
+      requests: [
+        {
+          indexName,
+          page,
+          query: searchText,
+          hitsPerPage: hits.per_page || 10,
+          attributesToRetrieve: ['permalink'],
+          attributesToHighlight: [
+            'title',
+            'excerpt',
+            'excerptStrip',
+            'contentStripTruncate',
+          ],
+          highlightPreTag: '<mark class="search-keyword">',
+          highlightPostTag: '</mark>',
+        },
+      ],
     });
     const data = result.results[0];
     if (data.nbHits === 0) {
-      container.innerHTML = '<div class="search-result-icon"><i class="far fa-frown fa-5x"></i></div>';
+      container.innerHTML =
+        '<div class="search-result-icon"><i class="far fa-frown fa-5x"></i></div>';
     } else {
       const stats = CONFIG.i18n.hits_time
         .replace('${hits}', data.nbHits)
@@ -77,17 +87,21 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }
     isSearching = false;
-    if (pendingQuery !== null && (pendingQuery.searchText !== searchText || pendingQuery.page !== page)) {
+    if (
+      pendingQuery !== null &&
+      (pendingQuery.searchText !== searchText || pendingQuery.page !== page)
+    ) {
       const { searchText, page } = pendingQuery;
       pendingQuery = null;
       searchAlgolia(searchText, page);
     }
   };
 
-  const inputEventFunction = async() => {
+  const inputEventFunction = async () => {
     const searchText = input.value.trim();
     if (searchText === '') {
-      container.innerHTML = '<div class="search-result-icon"><i class="fab fa-algolia fa-5x"></i></div>';
+      container.innerHTML =
+        '<div class="search-result-icon"><i class="fab fa-algolia fa-5x"></i></div>';
       return;
     }
     // Algolia client will automatically cache the data for same queries
@@ -113,12 +127,16 @@ document.addEventListener('DOMContentLoaded', () => {
     document.body.classList.remove('search-active');
   };
 
-  document.querySelector('.search-pop-overlay').addEventListener('click', event => {
-    if (event.target === document.querySelector('.search-pop-overlay')) {
-      onPopupClose();
-    }
-  });
-  document.querySelector('.popup-btn-close').addEventListener('click', onPopupClose);
+  document
+    .querySelector('.search-pop-overlay')
+    .addEventListener('click', event => {
+      if (event.target === document.querySelector('.search-pop-overlay')) {
+        onPopupClose();
+      }
+    });
+  document
+    .querySelector('.popup-btn-close')
+    .addEventListener('click', onPopupClose);
   document.addEventListener('pjax:success', onPopupClose);
   window.addEventListener('keydown', event => {
     if ((event.ctrlKey || event.metaKey) && event.key === 'k') {

@@ -1,11 +1,11 @@
 /* global CONFIG, firebase */
 
 firebase.initializeApp({
-  apiKey   : CONFIG.firestore.apiKey,
-  projectId: CONFIG.firestore.projectId
+  apiKey: CONFIG.firestore.apiKey,
+  projectId: CONFIG.firestore.projectId,
 });
 
-(function() {
+(function () {
   const getCount = (doc, increaseCount) => {
     // IncreaseCount will be false when not in article page
     return doc.get().then(d => {
@@ -16,7 +16,7 @@ firebase.initializeApp({
         // Increase count
         count++;
         doc.set({
-          count
+          count,
         });
       }
       return count;
@@ -27,7 +27,6 @@ firebase.initializeApp({
   const articles = db.collection(CONFIG.firestore.collection);
 
   document.addEventListener('page:loaded', () => {
-
     if (CONFIG.page.isPost) {
       // Fix issue #118
       // https://developer.mozilla.org/en-US/docs/Web/API/Node/textContent
@@ -44,11 +43,13 @@ firebase.initializeApp({
         document.querySelector('.firestore-visitors-count').innerText = count;
       });
     } else if (CONFIG.page.isHome) {
-      const promises = [...document.querySelectorAll('.post-title')].map(element => {
-        const title = element.textContent.trim();
-        const doc = articles.doc(title);
-        return getCount(doc);
-      });
+      const promises = [...document.querySelectorAll('.post-title')].map(
+        element => {
+          const title = element.textContent.trim();
+          const doc = articles.doc(title);
+          return getCount(doc);
+        }
+      );
       Promise.all(promises).then(counts => {
         const metas = document.querySelectorAll('.firestore-visitors-count');
         counts.forEach((val, idx) => {

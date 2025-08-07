@@ -1,16 +1,16 @@
 /* global CONFIG */
 
 // https://developers.google.com/calendar/api/v3/reference/events/list
-(function() {
+(function () {
   // Initialization
   const calendar = {
-    orderBy     : 'startTime',
+    orderBy: 'startTime',
     showLocation: false,
-    offsetMax   : 72,
-    offsetMin   : 4,
-    showDeleted : false,
+    offsetMax: 72,
+    offsetMin: 4,
+    showDeleted: false,
     singleEvents: true,
-    maxResults  : 250
+    maxResults: 250,
   };
 
   // Read config form theme config file
@@ -25,17 +25,21 @@
 
   // Build URL
   const params = {
-    key         : calendar.api_key,
-    orderBy     : calendar.orderBy,
-    timeMax     : timeMax.toISOString(),
-    timeMin     : timeMin.toISOString(),
-    showDeleted : calendar.showDeleted,
+    key: calendar.api_key,
+    orderBy: calendar.orderBy,
+    timeMax: timeMax.toISOString(),
+    timeMin: timeMin.toISOString(),
+    showDeleted: calendar.showDeleted,
     singleEvents: calendar.singleEvents,
-    maxResults  : calendar.maxResults
+    maxResults: calendar.maxResults,
   };
 
-  const request_url = new URL(`https://www.googleapis.com/calendar/v3/calendars/${calendar.calendar_id}/events`);
-  Object.entries(params).forEach(param => request_url.searchParams.append(...param));
+  const request_url = new URL(
+    `https://www.googleapis.com/calendar/v3/calendars/${calendar.calendar_id}/events`
+  );
+  Object.entries(params).forEach(param =>
+    request_url.searchParams.append(...param)
+  );
 
   function getRelativeTime(current, previous) {
     const msPerMinute = 60 * 1000;
@@ -65,11 +69,14 @@
   function buildEventDOM(tense, event, start, end) {
     const durationFormat = {
       weekday: 'short',
-      hour   : '2-digit',
-      minute : '2-digit'
+      hour: '2-digit',
+      minute: '2-digit',
     };
     const relativeTime = tense === 'now' ? 'NOW' : getRelativeTime(now, start);
-    const duration = start.toLocaleTimeString([], durationFormat) + ' - ' + end.toLocaleTimeString([], durationFormat);
+    const duration =
+      start.toLocaleTimeString([], durationFormat) +
+      ' - ' +
+      end.toLocaleTimeString([], durationFormat);
 
     let location = '';
     if (calendar.showLocation && event.location) {
@@ -96,38 +103,47 @@
     const eventList = document.querySelector('.event-list');
     if (!eventList) return;
 
-    fetch(request_url.href).then(response => {
-      return response.json();
-    }).then(data => {
-      if (data.items.length === 0) {
-        eventList.innerHTML = '<hr>';
-        return;
-      }
-      // Clean the event list
-      eventList.innerHTML = '';
-      let prevEnd = 0; // used to decide where to insert an <hr>
-      const utc = new Date().getTimezoneOffset() * 60000;
-
-      data.items.forEach(event => {
-        // Parse data
-        const start = new Date(event.start.dateTime || (new Date(event.start.date).getTime() + utc));
-        const end = new Date(event.end.dateTime || (new Date(event.end.date).getTime() + utc));
-
-        let tense = 'now';
-        if (end < now) {
-          tense = 'past';
-        } else if (start > now) {
-          tense = 'future';
+    fetch(request_url.href)
+      .then(response => {
+        return response.json();
+      })
+      .then(data => {
+        if (data.items.length === 0) {
+          eventList.innerHTML = '<hr>';
+          return;
         }
+        // Clean the event list
+        eventList.innerHTML = '';
+        let prevEnd = 0; // used to decide where to insert an <hr>
+        const utc = new Date().getTimezoneOffset() * 60000;
 
-        if (tense === 'future' && prevEnd < now) {
-          eventList.insertAdjacentHTML('beforeend', '<hr>');
-        }
+        data.items.forEach(event => {
+          // Parse data
+          const start = new Date(
+            event.start.dateTime || new Date(event.start.date).getTime() + utc
+          );
+          const end = new Date(
+            event.end.dateTime || new Date(event.end.date).getTime() + utc
+          );
 
-        eventList.insertAdjacentHTML('beforeend', buildEventDOM(tense, event, start, end));
-        prevEnd = end;
+          let tense = 'now';
+          if (end < now) {
+            tense = 'past';
+          } else if (start > now) {
+            tense = 'future';
+          }
+
+          if (tense === 'future' && prevEnd < now) {
+            eventList.insertAdjacentHTML('beforeend', '<hr>');
+          }
+
+          eventList.insertAdjacentHTML(
+            'beforeend',
+            buildEventDOM(tense, event, start, end)
+          );
+          prevEnd = end;
+        });
       });
-    });
   }
 
   fetchData();

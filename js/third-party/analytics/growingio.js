@@ -1,7 +1,7 @@
 /* global CONFIG, gio */
 
 if (!window.gio) {
-  window.gio = function() {
+  window.gio = function () {
     (window.gio.q = window.gio.q || []).push(arguments);
   };
 }
