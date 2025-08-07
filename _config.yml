@@ -3,17 +3,17 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Hexo
-subtitle: ''
-description: ''
-keywords:
-author: John Doe
-language: en
-timezone: ''
+title: Hailey's Blog
+subtitle: '前端技術學習與轉職心得分享'
+description: '分享前端開發技術學習心得，包含HTML、CSS、JavaScript、React、Angular、Bootstrap、Tailwind CSS等技術文章，以及前端工程師轉職經驗分享'
+keywords: '前端開發,JavaScript,React,Angular,HTML,CSS,Bootstrap,Tailwind CSS,轉職,前端工程師,程式學習,Web開發,前端技術,程式教學'
+author: Hailey
+language: zh-TW
+timezone: 'Asia/Taipei'
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
-url: http://example.com
+url: https://Hailey-1025.github.io/myBlog
 permalink: :year/:month/:day/:title/
 permalink_defaults:
 pretty_urls:
@@ -40,7 +40,7 @@ external_link:
   exclude: ''
 filename_case: 0
 render_drafts: false
-post_asset_folder: false
+post_asset_folder: true
 relative_link: false
 future: true
 syntax_highlighter: highlight.js
@@ -71,7 +71,7 @@ tag_map:
 
 # Metadata elements
 ## https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta
-meta_generator: true
+meta_generator: false # 建議關掉 Hexo 的 meta 標籤生成，SEO 比較乾淨
 
 # Date / Time format
 ## Hexo uses Moment.js to parse and display date
@@ -102,4 +102,5 @@ theme: next
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
   type: git
-  repo: https://github.com/Hailey-1025/myBlog
+  repo: https://github.com/Hailey-1025/myBlog.git
+  branch: gh-pages
