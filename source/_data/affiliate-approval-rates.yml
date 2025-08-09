@@ -1,0 +1,117 @@
+# 台灣聯盟平台審核難度與通過率分析
+
+platforms:
+  books_com_tw:
+    name: "博客來聯盟中心"
+    approval_rate: "80-90%"
+    difficulty: "簡單"
+    review_time: "3-5個工作天"
+    requirements:
+      basic:
+        - "有效的台灣身分證"
+        - "台灣銀行帳戶"
+        - "真實的聯絡資訊"
+      website:
+        - "網站可正常訪問"
+        - "有實際內容（至少5-10篇文章）"
+        - "內容健康正當"
+        - "沒有色情、暴力、賭博內容"
+      traffic:
+        - "不強制要求最低流量"
+        - "但網站要有基本互動"
+    common_rejection_reasons:
+      - "網站內容不足"
+      - "網站無法正常訪問"
+      - "內容與推廣商品無關"
+      - "申請資料不完整"
+    
+  shopee_affiliate:
+    name: "蝦皮購物聯盟"
+    approval_rate: "70-85%"
+    difficulty: "簡單到中等"
+    review_time: "1-3個工作天"
+    requirements:
+      basic:
+        - "蝦皮買家帳號（有購買記錄更好）"
+        - "台灣手機號碼"
+        - "真實身分資料"
+      social_media:
+        - "Facebook/Instagram帳號"
+        - "或部落格/網站"
+        - "有一定的追蹤者或流量"
+      content:
+        - "與購物、生活相關"
+        - "正面的品牌形象"
+    common_rejection_reasons:
+      - "社群媒體追蹤者太少"
+      - "缺乏實際推廣能力證明"
+      - "帳號活躍度不足"
+      
+  ichannels:
+    name: "通路王"
+    approval_rate: "60-75%"
+    difficulty: "中等"
+    review_time: "5-10個工作天"
+    requirements:
+      website:
+        - "有獨立網站或部落格"
+        - "網站內容豐富（建議20篇以上文章）"
+        - "每月有一定訪客量（建議500+）"
+        - "網站SEO基本優化"
+      content_quality:
+        - "原創內容為主"
+        - "內容與推廣商品相關"
+        - "文章品質良好"
+      traffic_source:
+        - "自然搜尋流量"
+        - "社群媒體流量"
+        - "直接訪問流量"
+    common_rejection_reasons:
+      - "網站流量不足"
+      - "內容品質不佳"
+      - "網站結構混亂"
+      - "缺乏SEO優化"
+
+# 提高通過率的策略
+approval_strategies:
+  content_preparation:
+    - "至少準備10-15篇高品質文章"
+    - "確保文章與要推廣的商品相關"
+    - "加入個人使用心得和真實推薦"
+    - "優化文章SEO（標題、描述、關鍵字）"
+    
+  website_optimization:
+    - "確保網站載入速度快"
+    - "手機版面友善"
+    - "導航清楚，結構良好"
+    - "聯絡方式和隱私政策頁面"
+    
+  traffic_building:
+    - "透過社群媒體分享文章"
+    - "與其他部落客交流"
+    - "持續更新內容"
+    - "回覆讀者留言建立互動"
+    
+  application_tips:
+    - "申請時詳細說明推廣計劃"
+    - "強調目標受眾和推廣方式"
+    - "展現對品牌的了解和認同"
+    - "提供真實可信的流量數據"
+
+# 被拒絕後的應對策略
+rejection_response:
+  immediate_actions:
+    - "詢問具體被拒原因"
+    - "改善網站內容品質"
+    - "增加文章數量"
+    - "提升網站流量"
+    
+  reapplication_timeline:
+    - "至少等待1個月後再申請"
+    - "確實改善被指出的問題"
+    - "準備更完整的申請資料"
+    
+  alternative_approaches:
+    - "先申請門檻較低的平台"
+    - "建立推廣成功案例"
+    - "累積更多網站權威性"

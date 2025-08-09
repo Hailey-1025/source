@@ -1,0 +1,74 @@
+# 已驗證可申請的台灣聯盟平台（2025年）
+
+# 確認可申請的電商平台
+confirmed_platforms:
+  - name: "博客來聯盟中心"
+    url: "https://affiliate.books.com.tw/"
+    status: "公開招募中"
+    commission: "2-8%"
+    payout: "NT$1,000"
+    verification: "已確認可申請"
+    
+  - name: "蝦皮購物聯盟"
+    url: "https://affiliate.shopee.tw/"
+    status: "公開招募中"
+    commission: "1-8%"
+    payout: "NT$100"
+    verification: "已確認可申請"
+    
+  - name: "PChome 24h購物聯盟"
+    url: "https://ecapi.pchome.com.tw/"
+    status: "需要審核"
+    commission: "1-15%"
+    payout: "NT$1,000"
+    verification: "存在但審核嚴格"
+
+# 其他確認可申請的平台
+other_confirmed:
+  - name: "通路王 (iChannels)"
+    url: "https://www.ichannels.com.tw/"
+    description: "台灣最大聯盟行銷平台"
+    commission: "依商家而定"
+    payout: "NT$1,000"
+    verification: "確認可申請"
+    features:
+      - "整合多家電商"
+      - "包含生活用品、書籍、3C"
+      - "統一後台管理"
+    
+  - name: "聯盟網 (affiliates.one)"
+    url: "https://www.affiliates.one/"
+    description: "新興聯盟平台"
+    commission: "2-20%"
+    payout: "NT$500"
+    verification: "確認可申請"
+    
+  - name: "8AM8聯盟行銷"
+    url: "https://www.8am8.com/"
+    description: "多元化聯盟平台"
+    commission: "1-15%"
+    payout: "NT$1,000"
+    verification: "需要確認"
+
+# 國際平台（不需PayPal的）
+international_no_paypal:
+  - name: "Amazon Associates (日本)"
+    url: "https://affiliate.amazon.co.jp/"
+    commission: "2-8%"
+    payout: "¥5,000"
+    payment: "銀行轉帳到台灣"
+    verification: "可申請但需日文"
+    
+# 可能不再公開招募的平台
+discontinued_or_limited:
+  - name: "Hahow好學校"
+    status: "可能僅限邀請制"
+    note: "沒有公開的聯盟申請頁面"
+    
+  - name: "momo購物網"
+    status: "可能暫停公開招募"
+    note: "聯盟頁面無法找到或已關閉"
+    
+  - name: "Yahoo購物中心"
+    status: "可能已停止新申請"
+    note: "聯盟連結失效"

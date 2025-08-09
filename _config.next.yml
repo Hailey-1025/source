@@ -141,3 +141,55 @@ minify: false
 # 緩存設定
 cache:
   enable: true
+
+# ---------------------------------------------------------------
+# SEO & Analytics - SEO和分析設定
+# ---------------------------------------------------------------
+
+# Google Analytics 4 (gtag.js)
+# 請先到 https://analytics.google.com/ 創建帳戶並獲取追蹤ID
+google_analytics:
+  tracking_id: G-ZSYREEJDQE
+  only_pageview: false
+
+# 或者使用gtag配置
+gtag:
+  enable: true
+  tracking_id: G-ZSYREEJDQE
+  anonymize_ip: false
+
+# Bing站長工具驗證（可選）
+bing_site_verification: # 如果需要，請填入Bing驗證碼
+
+# ---------------------------------------------------------------
+# Google AdSense 設定
+# ---------------------------------------------------------------
+
+# Google AdSense
+# 申請通過後，將 AdSense 發布商ID填入下方
+google_adsense:
+  enable: false  # 申請通過後改為 true
+  client_id: # 格式：ca-pub-xxxxxxxxxxxxxxxx
+  auto_ads: true  # 啟用自動廣告
+
+# ---------------------------------------------------------------
+# 聯盟行銷設定
+# ---------------------------------------------------------------
+
+# 聯盟行銷連結追蹤
+affiliate_marketing:
+  enable: true
+  disclosure_text: "本文包含聯盟連結，如果您通過這些連結購買，我可能會獲得小額佣金，但不會增加您的成本。"
+  
+  # 台灣平台
+  taiwan_platforms:
+    books_com_tw: # 博客來聯盟ID
+    pchome: # PChome聯盟ID
+    shopee: # 蝦皮聯盟ID
+    
+  # 國際平台
+  international_platforms:
+    udemy: # Udemy聯盟ID
+    coursera: # Coursera聯盟ID
+    hostinger: # Hostinger聯盟ID
+    digitalocean: # DigitalOcean聯盟ID

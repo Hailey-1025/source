@@ -1,0 +1,81 @@
+# 台灣聯盟行銷快速啟動指南
+
+# 第一週：台灣本土平台
+week_1:
+  - platform: "博客來"
+    url: "https://affiliate.books.com.tw/"
+    commission: "2-8%"
+    payout: "NT$1,000"
+    payment_method: "台灣銀行轉帳"
+    difficulty: "簡單"
+    suitable_for: "技術書籍推薦"
+    
+  - platform: "蝦皮購物"
+    url: "https://affiliate.shopee.tw/"
+    commission: "1-8%"
+    payout: "NT$100"
+    payment_method: "蝦皮錢包→銀行"
+    difficulty: "極簡單"
+    suitable_for: "各類商品"
+
+# 第二週：國際課程平台
+week_2:
+  - platform: "Udemy"
+    url: "https://www.udemy.com/affiliate/"
+    commission: "15-50%"
+    payout: "$50 USD"
+    payment_method: "PayPal→台灣銀行"
+    difficulty: "簡單"
+    suitable_for: "線上課程"
+    
+  - platform: "Coursera"
+    url: "https://www.coursera.org/affiliates/"
+    commission: "20-45%"
+    payout: "$100 USD"
+    payment_method: "PayPal或銀行轉帳"
+    difficulty: "中等"
+    suitable_for: "認證課程"
+
+# 第三週：高收益技術平台
+week_3:
+  - platform: "Hostinger"
+    url: "https://www.hostinger.com/affiliates"
+    commission: "$150 USD per sale"
+    payout: "$100 USD"
+    payment_method: "PayPal或銀行電匯"
+    difficulty: "簡單"
+    suitable_for: "網站主機"
+    
+  - platform: "DigitalOcean"
+    url: "https://www.digitalocean.com/partners/affiliate/"
+    commission: "$25-200 USD per sale"
+    payout: "$25 USD"
+    payment_method: "PayPal"
+    difficulty: "簡單"
+    suitable_for: "雲端主機"
+
+# 必要準備
+requirements:
+  bank_account:
+    - "台灣任一銀行帳戶"
+    - "帳戶名稱要與申請人相符"
+    
+  paypal_setup:
+    - "註冊PayPal台灣帳戶"
+    - "連結台灣銀行帳戶"
+    - "驗證帳戶功能"
+    
+  documents:
+    - "身分證明文件"
+    - "銀行帳戶證明"
+    - "網站/部落格連結"
+
+# 收益預估（每月1000訪客）
+revenue_estimate:
+  conservative: "NT$8,000-15,000"
+  optimistic: "NT$20,000-50,000"
+  factors:
+    - "內容品質"
+    - "讀者信任度"
+    - "推薦產品相關性"
+    - "SEO排名"

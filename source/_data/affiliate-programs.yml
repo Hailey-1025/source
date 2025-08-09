@@ -1,0 +1,97 @@
+# 台灣友善的聯盟行銷平台
+
+# 國際平台（接受台灣用戶）
+international:
+  - name: "Udemy"
+    description: "線上課程平台"
+    commission: "15-50%"
+    payment: "PayPal"
+    min_payout: "$50 USD"
+    approval: "容易"
+    taiwan_friendly: true
+    
+  - name: "Coursera"
+    description: "大學級線上課程"
+    commission: "20-45%"
+    payment: "PayPal, 銀行轉帳"
+    min_payout: "$100 USD"
+    approval: "中等"
+    taiwan_friendly: true
+    
+  - name: "Skillshare"
+    description: "創意課程平台"
+    commission: "$7-15 per signup"
+    payment: "PayPal"
+    min_payout: "$50 USD"
+    approval: "容易"
+    taiwan_friendly: true
+
+# 技術工具
+tech_tools:
+  - name: "Hostinger"
+    description: "網站主機"
+    commission: "每筆$150 USD"
+    payment: "PayPal, 銀行轉帳"
+    min_payout: "$100 USD"
+    approval: "容易"
+    taiwan_friendly: true
+    
+  - name: "Bluehost"
+    description: "WordPress主機"
+    commission: "每筆$65 USD"
+    payment: "PayPal"
+    min_payout: "$100 USD"
+    approval: "中等"
+    taiwan_friendly: true
+    
+  - name: "DigitalOcean"
+    description: "雲端主機"
+    commission: "每筆$25-200 USD"
+    payment: "PayPal"
+    min_payout: "$25 USD"
+    approval: "容易"
+    taiwan_friendly: true
+
+# 設計工具
+design_tools:
+  - name: "Canva Pro"
+    description: "圖形設計工具"
+    commission: "每筆$36 USD"
+    payment: "PayPal"
+    min_payout: "$50 USD"
+    approval: "容易"
+    taiwan_friendly: true
+    
+  - name: "Adobe Creative Cloud"
+    description: "創意軟體套裝"
+    commission: "$85 USD"
+    payment: "PayPal, 銀行轉帳"
+    min_payout: "$100 USD"
+    approval: "中等"
+    taiwan_friendly: true
+
+# 台灣本土平台
+taiwan_local:
+  - name: "博客來"
+    description: "台灣最大網路書店"
+    commission: "2-8%"
+    payment: "台灣銀行轉帳"
+    min_payout: "NT$1000"
+    approval: "容易"
+    taiwan_friendly: true
+    
+  - name: "PChome 24h"
+    description: "綜合購物平台"
+    commission: "1-15%"
+    payment: "台灣銀行轉帳"
+    min_payout: "NT$1000"
+    approval: "中等"
+    taiwan_friendly: true
+    
+  - name: "蝦皮購物"
+    description: "電商平台"
+    commission: "1-8%"
+    payment: "台灣銀行轉帳"
+    min_payout: "NT$100"
+    approval: "容易"
+    taiwan_friendly: true

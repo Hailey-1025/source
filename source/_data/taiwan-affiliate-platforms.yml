@@ -1,0 +1,141 @@
+# 台灣完整聯盟行銷平台清單
+
+# 電商平台
+ecommerce:
+  - name: "蝦皮購物聯盟"
+    url: "https://affiliate.shopee.tw/"
+    commission: "1-8%"
+    payout: "NT$100"
+    payment: "蝦皮錢包→台灣銀行"
+    difficulty: "極簡單"
+    suitable_for: "各類商品、3C配件"
+    
+  - name: "博客來聯盟中心"
+    url: "https://affiliate.books.com.tw/"
+    commission: "2-8%"
+    payout: "NT$1,000"
+    payment: "台灣銀行轉帳"
+    difficulty: "簡單"
+    suitable_for: "技術書籍、電子書"
+    
+  - name: "PChome 24h聯盟網"
+    url: "https://ecapi.pchome.com.tw/"
+    commission: "1-15%"
+    payout: "NT$1,000"
+    payment: "台灣銀行轉帳"
+    difficulty: "中等"
+    suitable_for: "3C產品、軟體"
+    
+  - name: "momo購物網聯盟"
+    url: "https://www.momoshop.com.tw/affiliate/"
+    commission: "2-12%"
+    payout: "NT$1,000"
+    payment: "台灣銀行轉帳"
+    difficulty: "中等"
+    suitable_for: "各類商品、電子產品"
+    
+  - name: "Yahoo購物中心"
+    url: "https://tw.partner.buy.yahoo.com/"
+    commission: "1-10%"
+    payout: "NT$1,000"
+    payment: "台灣銀行轉帳"
+    difficulty: "中等"
+    suitable_for: "品牌商品、3C"
+
+# 金融服務
+financial:
+  - name: "國泰世華銀行"
+    commission: "每成功開戶NT$200-800"
+    payout: "NT$1,000"
+    payment: "銀行轉帳"
+    difficulty: "中等"
+    suitable_for: "金融理財內容"
+    
+  - name: "富邦銀行聯盟"
+    commission: "每成功申請NT$300-1,200"
+    payout: "NT$1,000"
+    payment: "銀行轉帳"
+    difficulty: "中等"
+    suitable_for: "信用卡、貸款推薦"
+
+# 電信服務
+telecom:
+  - name: "中華電信"
+    commission: "每成功申辦NT$500-2,000"
+    payout: "NT$2,000"
+    payment: "銀行轉帳"
+    difficulty: "困難"
+    suitable_for: "網路、行動方案"
+    
+  - name: "台灣大哥大"
+    commission: "每成功申辦NT$400-1,500"
+    payout: "NT$1,500"
+    payment: "銀行轉帳"
+    difficulty: "困難"
+    suitable_for: "行動通訊內容"
+
+# 軟體與服務
+software:
+  - name: "Adobe台灣"
+    commission: "每筆NT$200-1,000"
+    payout: "NT$1,000"
+    payment: "銀行轉帳"
+    difficulty: "中等"
+    suitable_for: "設計工具推薦"
+    
+  - name: "Microsoft台灣"
+    commission: "每筆NT$100-500"
+    payout: "NT$1,000"
+    payment: "銀行轉帳"
+    difficulty: "中等"
+    suitable_for: "Office、Azure服務"
+
+# 教育平台
+education:
+  - name: "Hahow好學校"
+    url: "https://hahow.in/partners"
+    commission: "20-50%"
+    payout: "NT$1,000"
+    payment: "台灣銀行轉帳"
+    difficulty: "簡單"
+    suitable_for: "線上課程推薦"
+    
+  - name: "YOTTA友讀"
+    commission: "15-40%"
+    payout: "NT$500"
+    payment: "銀行轉帳"
+    difficulty: "簡單"
+    suitable_for: "職場技能課程"
+
+# 旅遊與生活
+lifestyle:
+  - name: "KKday"
+    url: "https://www.kkday.com/zh-tw/partner"
+    commission: "3-8%"
+    payout: "NT$1,000"
+    payment: "銀行轉帳"
+    difficulty: "簡單"
+    suitable_for: "旅遊、體驗活動"
+    
+  - name: "Klook客路"
+    commission: "2-6%"
+    payout: "NT$1,000"
+    payment: "銀行轉帳"
+    difficulty: "簡單"
+    suitable_for: "旅遊票券、活動"
+
+# 美食外送
+food_delivery:
+  - name: "foodpanda"
+    commission: "每單NT$15-50"
+    payout: "NT$500"
+    payment: "銀行轉帳"
+    difficulty: "簡單"
+    suitable_for: "美食、生活內容"
+    
+  - name: "Uber Eats"
+    commission: "每單NT$20-60"
+    payout: "NT$500"
+    payment: "銀行轉帳"
+    difficulty: "簡單"
+    suitable_for: "美食推薦"

@@ -1,0 +1,83 @@
+# 前端技術書籍推薦清單（博客來聯盟）
+
+javascript:
+  - title: "JavaScript 大全（第七版）"
+    author: "David Flanagan"
+    price_range: "NT$700-900"
+    difficulty: "初學者到進階"
+    why_recommend: "被譽為JS界的聖經，涵蓋所有核心概念"
+    commission_rate: "8%"
+    
+  - title: "你所不知道的JavaScript（全系列）"
+    author: "Kyle Simpson"
+    price_range: "NT$400-600"
+    difficulty: "中級到進階"
+    why_recommend: "深入解析JS的運作原理"
+    commission_rate: "7%"
+    
+  - title: "JavaScript 設計模式"
+    author: "Addy Osmani"
+    price_range: "NT$500-700"
+    difficulty: "中級"
+    why_recommend: "學習如何寫出更好的JS程式碼"
+    commission_rate: "6%"
+
+react:
+  - title: "React 學習手冊（第二版）"
+    author: "Alex Banks & Eve Porcello"
+    price_range: "NT$600-800"
+    difficulty: "初學者"
+    why_recommend: "React入門的最佳選擇"
+    commission_rate: "8%"
+    
+  - title: "深入React技術棧"
+    author: "陳屹"
+    price_range: "NT$500-700"
+    difficulty: "中級"
+    why_recommend: "深入理解React原理"
+    commission_rate: "7%"
+
+css:
+  - title: "CSS 揭秘"
+    author: "Lea Verou"
+    price_range: "NT$600-800"
+    difficulty: "中級"
+    why_recommend: "47個CSS技巧，實用性很高"
+    commission_rate: "8%"
+    
+  - title: "CSS 權威指南（第四版）"
+    author: "Eric A. Meyer & Estelle Weyl"
+    price_range: "NT$800-1000"
+    difficulty: "全級別"
+    why_recommend: "CSS最完整的參考書"
+    commission_rate: "8%"
+
+frontend_general:
+  - title: "前端工程師養成手冊"
+    author: "Various"
+    price_range: "NT$400-600"
+    difficulty: "初學者"
+    why_recommend: "前端學習路線圖"
+    commission_rate: "6%"
+    
+  - title: "網頁設計職人的實戰指南"
+    author: "Various"
+    price_range: "NT$500-700"
+    difficulty: "初學者到中級"
+    why_recommend: "從設計到開發的完整流程"
+    commission_rate: "7%"
+
+tools_and_workflow:
+  - title: "Git 版本控制實務（第二版）"
+    author: "Scott Chacon & Ben Straub"
+    price_range: "NT$500-700"
+    difficulty: "初學者到中級"
+    why_recommend: "版本控制必學工具"
+    commission_rate: "6%"
+    
+  - title: "Webpack實戰指南"
+    author: "Various"
+    price_range: "NT$400-600"
+    difficulty: "中級"
+    why_recommend: "現代前端打包工具"
+    commission_rate: "6%"

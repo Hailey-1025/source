@@ -13,7 +13,7 @@ timezone: 'Asia/Taipei'
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
-url: https://Hailey-1025.github.io/myBlog
+url: https://hailey-1025.github.io
 permalink: :year/:month/:day/:title/
 permalink_defaults:
 pretty_urls:
@@ -111,9 +111,12 @@ sitemap:
   tags: true
   categories: true
 
+# Google Analytics
+google_analytics: G-ZSYREEJDQE
+
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
   type: git
-  repo: https://github.com/Hailey-1025/myBlog.git
-  branch: gh-pages
+  repo: https://github.com/Hailey-1025/Hailey-1025.github.io.git
+  branch: main
