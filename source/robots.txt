@@ -1,0 +1,13 @@
+User-agent: *
+Allow: /
+
+# 禁止爬取私密內容
+Disallow: /novels/
+Disallow: /private/
+Disallow: /draft/
+
+# 指向 XML Sitemap
+Sitemap: https://Hailey-1025.github.io/myBlog/sitemap.xml
+
+# 基本SEO設定
+Crawl-delay: 1

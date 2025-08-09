@@ -58,7 +58,7 @@ sidebar:
   # 側邊欄位置
   position: left
   # 側邊欄顯示時機 (post | always | hide | remove)
-  display: post
+  display: always
   # 側邊欄填充
   padding: 18
   # 側邊欄偏移
