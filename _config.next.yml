@@ -1,0 +1,143 @@
+# ===============================================================
+# NexT Theme Configuration
+# ===============================================================
+
+# ---------------------------------------------------------------
+# Scheme Settings - 樣式設定
+# ---------------------------------------------------------------
+
+# 切換到 Pisces 樣式
+scheme: Pisces
+
+# 啟用亮色模式
+darkmode: false
+
+# ---------------------------------------------------------------
+# Site Information Settings - 網站資訊設定
+# ---------------------------------------------------------------
+
+# 網站圖示設定
+favicon:
+  small: /images/favicon-16x16-next.png
+  medium: /images/favicon-32x32-next.png
+  apple_touch_icon: /images/apple-touch-icon-next.png
+
+# 頭像設定
+avatar:
+  # 頭像圖片路徑
+  url: /images/avatar.gif
+  # 是否為圓形
+  rounded: true
+  # 滑鼠懸停時旋轉
+  rotated: true
+
+# ---------------------------------------------------------------
+# Menu Settings - 選單設定
+# ---------------------------------------------------------------
+
+menu:
+  home: / || fa fa-home
+  #about: /about/ || fa fa-user
+  #tags: /tags/ || fa fa-tags
+  #categories: /categories/ || fa fa-th
+  archives: /archives/ || fa fa-archive
+  #schedule: /schedule/ || fa fa-calendar
+  #sitemap: /sitemap.xml || fa fa-sitemap
+  #commonweal: /404/ || fa fa-heartbeat
+
+# 啟用 / 停用選單圖示
+menu_settings:
+  icons: true
+  badges: false
+
+# ---------------------------------------------------------------
+# Sidebar Settings - 側邊欄設定
+# ---------------------------------------------------------------
+
+sidebar:
+  # 側邊欄位置
+  position: left
+  # 側邊欄顯示時機 (post | always | hide | remove)
+  display: post
+  # 側邊欄填充
+  padding: 18
+  # 側邊欄偏移
+  offset: 12
+
+# ---------------------------------------------------------------
+# Footer Settings - 頁尾設定
+# ---------------------------------------------------------------
+
+footer:
+  # 指定網站建立時間
+  since: 2025
+  # 圖示和網站之間的圖示
+  icon:
+    # 圖示名稱
+    name: fa fa-heart
+    # 圖示動畫
+    animated: true
+    # 圖示顏色
+    color: "#ff0000"
+  # 版權資訊
+  copyright:
+  # 由...驅動資訊
+  powered: true
+  # 主題與版本
+  theme:
+    enable: true
+    version: true
+
+# ---------------------------------------------------------------
+# Post Settings - 文章設定
+# ---------------------------------------------------------------
+
+# 自動摘錄描述
+excerpt_description: true
+
+# 閱讀更多按鈕
+read_more_btn: true
+
+# 文章 meta 顯示
+post_meta:
+  item_text: true
+  created_at: true
+  updated_at:
+    enable: true
+    another_day: true
+  categories: true
+
+# Post edit
+# Easily browse and edit blog source code online.
+post_edit:
+  enable: false
+
+# 目錄設定 (Table of Contents)
+toc:
+  enable: true
+  number: true
+  wrap: true
+  expand_all: false
+  max_depth: 6
+
+# ---------------------------------------------------------------
+# Custom Style Settings - 自定義樣式設定
+# ---------------------------------------------------------------
+
+# 自定義樣式
+custom_file_path:
+  # 如果需要自定義變數，可以取消註解
+  #variable: source/_data/variables.styl
+  # 如果需要自定義樣式，可以取消註解
+  #style: source/_data/styles.styl
+
+# ---------------------------------------------------------------
+# Optimization - 效能優化
+# ---------------------------------------------------------------
+
+# 壓縮 HTML
+minify: false
+
+# 緩存設定
+cache:
+  enable: true
