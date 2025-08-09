@@ -7,9 +7,12 @@ hexo.extend.filter.register('before_generate', function() {
   const privateCategories = config.private_categories || [];
   
   // 檢查是否為本地開發模式
-  const isServer = process.argv.includes('server') || process.argv.includes('s') || 
+  const isServer = process.argv.includes('server') || 
+                   process.argv.includes('serve') || 
+                   process.argv.includes('s') || 
                    process.env.NODE_ENV === 'development' ||
-                   hexo.env.cmd === 'server';
+                   hexo.env.cmd === 'server' ||
+                   hexo.env.cmd === 'serve';
   
   if (privateCategories.length === 0 || isServer) {
     if (isServer) {
