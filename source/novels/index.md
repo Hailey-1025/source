@@ -59,35 +59,57 @@ document.addEventListener('DOMContentLoaded', function() {
     link.addEventListener('click', function(e) {
       e.preventDefault();
       const href = link.getAttribute('href');
+      console.log('Clicked href:', href);
       
       if (href && href.startsWith('#')) {
         // 解碼 URL 編碼的錨點
         const decodedHref = decodeURIComponent(href);
+        console.log('Decoded href:', decodedHref);
         
-        // 根據錨點找到對應的小說區域
+        // 根據錨點找到對應的小說連結
         const targetElement = document.querySelector(decodedHref);
+        console.log('Target element:', targetElement);
         
         if (targetElement) {
-          // 找到對應的小說連結並跳轉
-          const nextDiv = targetElement.nextElementSibling;
-          if (nextDiv && nextDiv.classList.contains('novel-item')) {
-            const novelLink = nextDiv.querySelector('a[href$=".html"]');
+          // 查找緊接著的內容元素 (現在是 novel-item div)
+          let nextElement = targetElement.nextElementSibling;
+          console.log('Next element:', nextElement);
+          
+          if (nextElement && nextElement.classList.contains('novel-item')) {
+            // 在 novel-item div 內部尋找小說連結
+            const novelLink = nextElement.querySelector('a[href$=".html"]');
+            console.log('Novel link found:', novelLink);
+            
             if (novelLink) {
-              // 跳轉到實際的小說頁面
-              window.location.href = novelLink.getAttribute('href');
-              return;
+              // 直接跳轉到小說頁面
+              const novelHref = novelLink.getAttribute('href');
+              console.log('Redirecting to:', novelHref);
+              window.location.href = novelHref;
+            } else {
+              console.log('No novel link found, scrolling to position');
+              targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
             }
-          }
-          
-          // 如果沒有找到小說連結，則滾動到對應位置
-          targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
-          
-          // 高亮顯示對應的小說區域
-          if (nextDiv && nextDiv.classList.contains('novel-item')) {
-            nextDiv.style.backgroundColor = '#f8f9fa';
-            setTimeout(() => {
-              nextDiv.style.backgroundColor = '';
-            }, 2000);
+          } else {
+            // 回退到舊邏輯：查找 p 標籤
+            while (nextElement && nextElement.tagName !== 'P') {
+              nextElement = nextElement.nextElementSibling;
+            }
+            
+            if (nextElement) {
+              const novelLink = nextElement.querySelector('a[href$=".html"]');
+              console.log('Novel link found (fallback):', novelLink);
+              
+              if (novelLink) {
+                const novelHref = novelLink.getAttribute('href');
+                console.log('Redirecting to (fallback):', novelHref);
+                window.location.href = novelHref;
+              } else {
+                console.log('No novel link found, scrolling to position');
+                nextElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+              }
+            } else {
+              console.log('No next element found');
+            }
           }
         }
       }
@@ -167,7 +189,9 @@ document.addEventListener('DOMContentLoaded', function() {
 <!-- 標籤：#古代 #肉 #ABO -->
 </div>
 
+## 奇幻系列
 
+## 其他作品
 
 ---
 
