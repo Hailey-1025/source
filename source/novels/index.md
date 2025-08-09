@@ -59,42 +59,35 @@ document.addEventListener('DOMContentLoaded', function() {
     link.addEventListener('click', function(e) {
       e.preventDefault();
       const href = link.getAttribute('href');
-      console.log('Clicked href:', href);
       
       if (href && href.startsWith('#')) {
         // 解碼 URL 編碼的錨點
         const decodedHref = decodeURIComponent(href);
-        console.log('Decoded href:', decodedHref);
         
-        // 根據錨點找到對應的小說連結
+        // 根據錨點找到對應的小說區域
         const targetElement = document.querySelector(decodedHref);
-        console.log('Target element:', targetElement);
         
         if (targetElement) {
-          // 查找緊接著的內容元素
-          let nextElement = targetElement.nextElementSibling;
-          console.log('Next element:', nextElement);
-          
-          // 如果下一個元素不是 p 標籤，繼續查找
-          while (nextElement && nextElement.tagName !== 'P') {
-            nextElement = nextElement.nextElementSibling;
+          // 找到對應的小說連結並跳轉
+          const nextDiv = targetElement.nextElementSibling;
+          if (nextDiv && nextDiv.classList.contains('novel-item')) {
+            const novelLink = nextDiv.querySelector('a[href$=".html"]');
+            if (novelLink) {
+              // 跳轉到實際的小說頁面
+              window.location.href = novelLink.getAttribute('href');
+              return;
+            }
           }
           
-          if (nextElement) {
-            const novelLink = nextElement.querySelector('a[href$=".html"]');
-            console.log('Novel link found:', novelLink);
-            
-            if (novelLink) {
-              // 直接跳轉到小說頁面
-              const novelHref = novelLink.getAttribute('href');
-              console.log('Redirecting to:', novelHref);
-              window.location.href = novelHref;
-            } else {
-              console.log('No novel link found, scrolling to position');
-              nextElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            }
-          } else {
-            console.log('No next element found');
+          // 如果沒有找到小說連結，則滾動到對應位置
+          targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          
+          // 高亮顯示對應的小說區域
+          if (nextDiv && nextDiv.classList.contains('novel-item')) {
+            nextDiv.style.backgroundColor = '#f8f9fa';
+            setTimeout(() => {
+              nextDiv.style.backgroundColor = '';
+            }, 2000);
           }
         }
       }
@@ -103,24 +96,91 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 </script>
 
+<!-- 小說標籤雲 (使用 Next 原生樣式) -->
+<div class="tag-cloud">
+  <div class="tag-cloud-title">
+    📚 依標籤瀏覽小說
+  </div>
+  <div class="tag-cloud-tags">
+    <a href="#" class="tag-cloud-0" style="font-size: 14px;" data-tag="all">全部</a>
+    <a href="#" class="tag-cloud-0" style="font-size: 12px;" data-tag="古代">古代</a>
+    <a href="#" class="tag-cloud-0" style="font-size: 12px;" data-tag="現代">現代</a>
+    <a href="#" class="tag-cloud-0" style="font-size: 13px;" data-tag="ABO">ABO</a>
+    <a href="#" class="tag-cloud-0" style="font-size: 12px;" data-tag="言情">言情</a>
+    <a href="#" class="tag-cloud-0" style="font-size: 12px;" data-tag="奇幻">奇幻</a>
+    <a href="#" class="tag-cloud-0" style="font-size: 12px;" data-tag="肉">肉</a>
+    <a href="#" class="tag-cloud-0" style="font-size: 12px;" data-tag="甜文">甜文</a>
+  </div>
+</div>
+
+<script>
+// 使用 Next 原生樣式的小說標籤篩選
+document.addEventListener('DOMContentLoaded', function() {
+  const tagLinks = document.querySelectorAll('.tag-cloud-tags a[data-tag]');
+  const novelItems = document.querySelectorAll('.novel-item');
+  
+  tagLinks.forEach(link => {
+    link.addEventListener('click', function(e) {
+      e.preventDefault();
+      const selectedTag = this.getAttribute('data-tag');
+      
+      // 更新標籤樣式 - 使用 Next 的 active 狀態
+      tagLinks.forEach(l => {
+        l.style.fontWeight = 'normal';
+        l.style.textDecoration = 'none';
+      });
+      this.style.fontWeight = 'bold';
+      this.style.textDecoration = 'underline';
+      
+      // 篩選小說
+      novelItems.forEach(item => {
+        const tags = item.getAttribute('data-tags');
+        if (selectedTag === 'all' || (tags && tags.includes(selectedTag))) {
+          item.style.display = 'block';
+        } else {
+          item.style.display = 'none';
+        }
+      });
+    });
+  });
+  
+  // 預設選中全部
+  const allTag = document.querySelector('.tag-cloud-tags a[data-tag="all"]');
+  if (allTag) {
+    allTag.style.fontWeight = 'bold';
+    allTag.style.textDecoration = 'underline';
+  }
+});
+</script>
+
 ## ABO系列
 
 ### 三喜
-📖 [三喜](./ABO/三喜.html)  
-**狀態**：連載中 | **更新時間**：2025-01-07  
-**簡介**：這裡是三喜的故事...  
+<div class="novel-item" data-tags="古代,肉,ABO" style="margin-bottom: 20px; padding: 15px; border-bottom: 1px solid #eee;">
+
+📖 [三喜](./ABO/三喜.html)
+
+**狀態**：連載中 | **更新時間**：2025-01-07
+
+**簡介**：這裡是三喜的故事...
+
 <!-- 標籤：#古代 #肉 #ABO -->
+</div>
 
-## 奇幻系列
 
-## 其他作品
 
 ---
 
 <!-- 新增小說模板：
 
 ### 小說標題
-📖 [小說標題](./資料夾/檔案名稱.html)  
-**狀態**：連載中/完結 | **更新時間**：YYYY-MM-DD  
-**簡介**：簡短描述...  
+<div class="novel-item" data-tags="標籤1,標籤2,分類" style="margin-bottom: 20px; padding: 15px; border-bottom: 1px solid #eee;">
+
+📖 [小說標題](./資料夾/檔案名稱.html)
+
+**狀態**：連載中/完結 | **更新時間**：YYYY-MM-DD
+
+**簡介**：簡短描述...
+
 <!-- 標籤：#標籤1 #標籤2 #分類 -->
+</div>
