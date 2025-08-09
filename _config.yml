@@ -69,6 +69,11 @@ default_category: uncategorized
 category_map:
 tag_map:
 
+# 私密文章設置
+# 排除私密分類的文章不顯示在公開網站
+private_categories:
+  - 小說
+
 # Metadata elements
 ## https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta
 meta_generator: false # 建議關掉 Hexo 的 meta 標籤生成，SEO 比較乾淨
